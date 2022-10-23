@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6143E23229059EA1007BE78D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6143E23129059EA1007BE78D /* main.cpp */; };
+		6143E2412905B0A9007BE78D /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6143E23929059F5D007BE78D /* SDL2.framework */; };
+		6143E2462905DCED007BE78D /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6143E2442905DCED007BE78D /* Game.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +27,10 @@
 /* Begin PBXFileReference section */
 		6143E22E29059EA1007BE78D /* SDL_WindowTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDL_WindowTest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6143E23129059EA1007BE78D /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6143E23929059F5D007BE78D /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		6143E23D2905A2FC007BE78D /* 2.0.22 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = 2.0.22; path = ../../../../../usr/local/Cellar/sdl2/2.0.22; sourceTree = "<group>"; };
+		6143E2442905DCED007BE78D /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
+		6143E2452905DCED007BE78D /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6143E2412905B0A9007BE78D /* SDL2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +50,7 @@
 			children = (
 				6143E23029059EA1007BE78D /* SDL_WindowTest */,
 				6143E22F29059EA1007BE78D /* Products */,
+				6143E23829059F5C007BE78D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +66,19 @@
 			isa = PBXGroup;
 			children = (
 				6143E23129059EA1007BE78D /* main.cpp */,
+				6143E2442905DCED007BE78D /* Game.cpp */,
+				6143E2452905DCED007BE78D /* Game.hpp */,
 			);
 			path = SDL_WindowTest;
+			sourceTree = "<group>";
+		};
+		6143E23829059F5C007BE78D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6143E23D2905A2FC007BE78D /* 2.0.22 */,
+				6143E23929059F5D007BE78D /* SDL2.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6143E23229059EA1007BE78D /* main.cpp in Sources */,
+				6143E2462905DCED007BE78D /* Game.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,6 +190,7 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_VERSION = "/usr/bin/clang++";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -222,6 +243,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_VERSION = "/usr/bin/clang++";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -238,7 +260,16 @@
 		6143E23629059EA1007BE78D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_VERSION = "";
+				OTHER_CFLAGS = "-lSDL2";
+				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -246,7 +277,16 @@
 		6143E23729059EA1007BE78D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_VERSION = "";
+				OTHER_CFLAGS = "-lSDL2";
+				OTHER_CPLUSPLUSFLAGS = "$(OTHER_CFLAGS)";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
