@@ -1,0 +1,8 @@
+# ignore everything
+*
+
+# but the sources
+!/SDL_WindowTest
+
+# and this file
+!.gitignore
