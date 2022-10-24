@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <SDL2/SDL.h>
+#include <SDL2_image/SDL_image.h>
 
 class Game {
     public :
@@ -27,6 +28,7 @@ class Game {
     }
 private:
     bool isRunning;
+    int cnt = 0;
     SDL_Window *window;
     SDL_Renderer *renderer;
 };

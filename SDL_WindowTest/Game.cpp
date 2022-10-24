@@ -6,6 +6,10 @@
 //
 
 #include "Game.hpp"
+#include "TextureManager.hpp"
+#include "GameObject.hpp"
+
+GameObject *player, *enemy;
 
 void Game::init(const char *title, int xpos, int ypos, int width, int height, bool fullscreen)
 {
@@ -29,6 +33,8 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     } else {
         isRunning = false;
     }
+    player = new GameObject("/Users/bulatislamov/Desktop/projects/SDL_WindowTest/SDL_WindowTest/hero.png", renderer, 0, 0);
+    enemy = new GameObject("/Users/bulatislamov/Desktop/projects/SDL_WindowTest/SDL_WindowTest/enemy.png", renderer, 50, 50);
 }
 
 void Game:: handleEvents()
@@ -53,11 +59,15 @@ void Game::clean() {
 
 void Game::render() {
     SDL_RenderClear(renderer);
-    //this is where we would add stuff to render
+    player->Render();
+    enemy->Render();
     SDL_RenderPresent (renderer) ;
 }
 
-void Game::update() {}
+void Game::update() {
+    player->Update();
+    enemy->Update();
+}
 
 Game::Game() {}
 Game::~Game() {}

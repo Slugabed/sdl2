@@ -10,6 +10,9 @@
 		6143E23229059EA1007BE78D /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6143E23129059EA1007BE78D /* main.cpp */; };
 		6143E2412905B0A9007BE78D /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6143E23929059F5D007BE78D /* SDL2.framework */; };
 		6143E2462905DCED007BE78D /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6143E2442905DCED007BE78D /* Game.cpp */; };
+		6143E24829069A38007BE78D /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6143E24729069A38007BE78D /* SDL2_image.framework */; };
+		6143E24E2906C9FC007BE78D /* TextureManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6143E24C2906C9FC007BE78D /* TextureManager.cpp */; };
+		6143E2522906D619007BE78D /* GameObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6143E2502906D619007BE78D /* GameObject.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +34,13 @@
 		6143E23D2905A2FC007BE78D /* 2.0.22 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = 2.0.22; path = ../../../../../usr/local/Cellar/sdl2/2.0.22; sourceTree = "<group>"; };
 		6143E2442905DCED007BE78D /* Game.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		6143E2452905DCED007BE78D /* Game.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Game.hpp; sourceTree = "<group>"; };
+		6143E24729069A38007BE78D /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
+		6143E24B29069E0A007BE78D /* hero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hero.png; sourceTree = "<group>"; };
+		6143E24C2906C9FC007BE78D /* TextureManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TextureManager.cpp; sourceTree = "<group>"; };
+		6143E24D2906C9FC007BE78D /* TextureManager.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = TextureManager.hpp; sourceTree = "<group>"; };
+		6143E24F2906D1E1007BE78D /* hero.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hero.png; path = SDL_WindowTest/hero.png; sourceTree = "<group>"; };
+		6143E2502906D619007BE78D /* GameObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameObject.cpp; sourceTree = "<group>"; };
+		6143E2512906D619007BE78D /* GameObject.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameObject.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +49,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6143E2412905B0A9007BE78D /* SDL2.framework in Frameworks */,
+				6143E24829069A38007BE78D /* SDL2_image.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -48,6 +59,7 @@
 		6143E22529059EA1007BE78D = {
 			isa = PBXGroup;
 			children = (
+				6143E24F2906D1E1007BE78D /* hero.png */,
 				6143E23029059EA1007BE78D /* SDL_WindowTest */,
 				6143E22F29059EA1007BE78D /* Products */,
 				6143E23829059F5C007BE78D /* Frameworks */,
@@ -65,9 +77,14 @@
 		6143E23029059EA1007BE78D /* SDL_WindowTest */ = {
 			isa = PBXGroup;
 			children = (
+				6143E2502906D619007BE78D /* GameObject.cpp */,
+				6143E2512906D619007BE78D /* GameObject.hpp */,
+				6143E24B29069E0A007BE78D /* hero.png */,
 				6143E23129059EA1007BE78D /* main.cpp */,
 				6143E2442905DCED007BE78D /* Game.cpp */,
 				6143E2452905DCED007BE78D /* Game.hpp */,
+				6143E24C2906C9FC007BE78D /* TextureManager.cpp */,
+				6143E24D2906C9FC007BE78D /* TextureManager.hpp */,
 			);
 			path = SDL_WindowTest;
 			sourceTree = "<group>";
@@ -75,6 +92,7 @@
 		6143E23829059F5C007BE78D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6143E24729069A38007BE78D /* SDL2_image.framework */,
 				6143E23D2905A2FC007BE78D /* 2.0.22 */,
 				6143E23929059F5D007BE78D /* SDL2.framework */,
 			);
@@ -138,8 +156,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6143E2522906D619007BE78D /* GameObject.cpp in Sources */,
 				6143E23229059EA1007BE78D /* main.cpp in Sources */,
 				6143E2462905DCED007BE78D /* Game.cpp in Sources */,
+				6143E24E2906C9FC007BE78D /* TextureManager.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +282,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = SDL_WindowTest/hero.png;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
@@ -279,6 +300,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = SDL_WindowTest/hero.png;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
