@@ -10,8 +10,14 @@
 
 #include <stdio.h>
 #include <iostream>
+#include <filesystem>
+
 #include <SDL2/SDL.h>
+#if _WIN32
+#include <SDL2/SDL_image.h>
+#else
 #include <SDL2_image/SDL_image.h>
+#endif
 
 class Game {
     public :

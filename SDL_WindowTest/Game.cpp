@@ -9,6 +9,8 @@
 #include "TextureManager.hpp"
 #include "GameObject.hpp"
 
+namespace fs = std::filesystem;
+
 GameObject *player, *enemy;
 
 void Game::init(const char *title, int xpos, int ypos, int width, int height, bool fullscreen)
@@ -33,8 +35,16 @@ void Game::init(const char *title, int xpos, int ypos, int width, int height, bo
     } else {
         isRunning = false;
     }
-    player = new GameObject("/Users/bulatislamov/Desktop/projects/SDL_WindowTest/SDL_WindowTest/hero.png", renderer, 0, 0);
-    enemy = new GameObject("/Users/bulatislamov/Desktop/projects/SDL_WindowTest/SDL_WindowTest/enemy.png", renderer, 50, 50);
+
+    fs::path image_path;
+
+    image_path = "Resources";
+    image_path /= "hero.png";
+    player = new GameObject(image_path.string().c_str(), renderer, 0, 0);
+
+    image_path = "Resources";
+    image_path /= "enemy.png";
+    enemy = new GameObject(image_path.string().c_str(), renderer, 50, 50);
 }
 
 void Game:: handleEvents()
