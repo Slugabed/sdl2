@@ -80,7 +80,8 @@ bool Game::initGL()
 
     //Initialize Projection Matrix
     glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
+    //glLoadIdentity();
+    glFrustum(-1, 1, -1, 1, 0.1f, 10.0f);
 
     //Check for error
     error = glGetError();
@@ -138,7 +139,9 @@ void Game::clean() {
 
 void Game::render() {
     float n;
-    if (modff(time, &n) > 0.5f)
+    bool mode = modff(time * 0.5f, &n) > 0.5f;
+
+    if (mode)
         SDL_RenderClear(renderer);
     else
         glClear(GL_COLOR_BUFFER_BIT);
@@ -148,14 +151,17 @@ void Game::render() {
 
     glBegin(GL_LINE_LOOP);
     std::cout << time << std::endl;
-    for (int i = 0; i < 100; i++)
+    for (int i = 0; i < 1000; i++)
     {
-        float f = (float)i / 100 * 3.14f * 2;
-        glVertex3f(sinf(f * 5 + time * 0.1f), cosf(f * 2 + time * 0.2f), cosf(f * 12));
+        float f = (float)i / 1000 * 3.14f * 2;
+        glVertex3f(
+            sinf(f * 15 + time * 0.4f), 
+            cosf(f * 20 + time * 0.7f), 
+            cosf(f * 12) - 1.2f);
     }
     glEnd();
 
-    if (modff(time, &n) > 0.5f)
+    if (mode)
         SDL_RenderPresent(renderer);
     else
         //Update screen
