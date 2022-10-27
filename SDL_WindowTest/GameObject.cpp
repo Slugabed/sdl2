@@ -12,7 +12,7 @@ GameObject::GameObject(const char* texturesheet, SDL_Renderer *renderer, int xpo
     GameObject::renderer = renderer;
     GameObject::xpos = xpos;
     GameObject::ypos = ypos;
-    objTexture = TextManager::LoadTexture(texturesheet, renderer);
+    objTexture = TextureManager::LoadTexture(texturesheet, renderer);
     std::cout << objTexture << std::endl;
 }
 

@@ -7,7 +7,7 @@
 
 #include "TextureManager.hpp"
 
-SDL_Texture* TextManager::LoadTexture(const char *fileName, SDL_Renderer *renderer) {
+SDL_Texture* TextureManager::LoadTexture(const char *fileName, SDL_Renderer *renderer) {
     SDL_Surface *tmpSurface = IMG_Load(fileName);
     if (tmpSurface == NULL)
     {
