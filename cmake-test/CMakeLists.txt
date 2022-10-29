@@ -10,3 +10,7 @@ find_package(SDL2_image REQUIRED)
 add_executable(${PROJECT_NAME} Game.cpp Game.hpp GameObject.cpp GameObject.hpp Map.cpp Map.hpp TextureManager.cpp TextureManager.hpp main.cpp)
 
 target_link_libraries(cmake-test PRIVATE SDL2::SDL2 SDL2_image::SDL2_image)
+
+add_custom_command(TARGET ${PROJECT_NAME} PRE_BUILD
+                   COMMAND ${CMAKE_COMMAND} -E copy_directory
+                       ${CMAKE_SOURCE_DIR}/Resources/ $<TARGET_FILE_DIR:cmake-test>/Resources)

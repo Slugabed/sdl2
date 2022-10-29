@@ -4,5 +4,18 @@
 # but the sources
 !/SDL_WindowTest
 
+# but cmake-test
+!/cmake-test
+
+**/bin
+
+**/CMakeFiles
+
+**/CMakeCache.txt
+
+**/cmake_install.cmake
+
+**/Makefile
+
 # and this file
 !.gitignore
