@@ -8,10 +8,12 @@
 #include "Game.hpp"
 #include "TextureManager.hpp"
 #include "GameObject.hpp"
+#include "Circle.hpp"
 
 namespace fs = std::filesystem;
 
 GameObject* player, * enemy;
+Circle* circle;
 
 void Game::init(const char* title, int xpos, int ypos, int width, int height, bool fullscreen)
 {
@@ -50,6 +52,8 @@ void Game::init(const char* title, int xpos, int ypos, int width, int height, bo
 	image_path = "Resources";
 	image_path /= "enemy.png";
 	enemy = new GameObject(image_path.string().c_str(), renderer, 50, 50);
+
+	circle = new Circle(renderer);
 }
 
 void Game::handleEvents()
@@ -77,6 +81,7 @@ void Game::render() {
 
 	player->Render();
 	enemy->Render();
+	circle->Render();
 
 	SDL_RenderPresent(renderer);
 }
