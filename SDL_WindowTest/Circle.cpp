@@ -31,12 +31,12 @@ void Circle::Render()
 		vert[j].position.y = pos.y + 0;
 
 		t = (float)i / segments * 3.1416f * 2;
-		vert[j + 1].position.x = pos.x + cos(t) * radius;
-		vert[j + 1].position.y = pos.y + sin(t) * radius;
+		vert[j + 1].position.x = pos.x + sin(t) * radius;
+		vert[j + 1].position.y = pos.y + cos(t) * radius;
 
 		t = (float)(i + 1) / segments * 3.1416f * 2;
-		vert[j + 2].position.x = pos.x + cos(t) * radius;
-		vert[j + 2].position.y = pos.y + sin(t) * radius;
+		vert[j + 2].position.x = pos.x + sin(t) * radius;
+		vert[j + 2].position.y = pos.y + cos(t) * radius;
 	}
 
 	SDL_RenderGeometry(renderer, NULL, vert, segments * 3, NULL, 0);
