@@ -5,13 +5,12 @@
 //  Created by Bulat Islamov on 23.10.22..
 //
 
-#ifndef Game_hpp
-#define Game_hpp
+#pragma once
 
-#include <stdio.h>
+#include <cstdio>
 #include <iostream>
 #include <SDL2/SDL.h>
-#include <SDL2_image/SDL_image.h>
+#include <SDL_image.h>
 
 class Game {
     public :
@@ -29,9 +28,7 @@ class Game {
     
     static SDL_Renderer *renderer;
 private:
-    bool isRunning;
+    bool isRunning = false;
     int cnt = 0;
     SDL_Window *window;
 };
-
-#endif /* Game_hpp */

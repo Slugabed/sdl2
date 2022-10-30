@@ -5,18 +5,23 @@
 //  Created by Bulat Islamov on 24.10.22..
 //
 
-#ifndef Map_hpp
-#define Map_hpp
+#pragma once
 
-#include <stdio.h>
+#include <cstdio>
 #include "Game.hpp"
+#include <vector>
+
+using MapArr = std::vector<std::vector<int>>;
+
+const int WIDTH = 25;
+const int HEIGHT = 20;
 
 class Map {
 public:
     Map();
     ~Map();
     
-    void LoadMap();
+    void LoadMap(MapArr);
     void DrawMap();
     
 private:
@@ -24,8 +29,6 @@ private:
     SDL_Texture* dirt;
     SDL_Texture* grass;
     SDL_Texture* water;
-    
-    int map[20][25];
-};
 
-#endif /* Map_hpp */
+    MapArr map;
+};
